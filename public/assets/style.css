@@ -10,45 +10,45 @@
     display: flex;
     left: 50%;
     transform: translateX(-50%);
-  }
+}
   
-  .lever {
+.lever {
     position: absolute;
     width: 10px;
     left: 22px;
     top: 0;
     transform: rotate(30deg);
     transform-origin: 50% 100%;
-  }
+}
   
-  .knob {
+.knob {
     background-color: black;
     width: 10px;
     height: 18px;
-  }
+}
   
-  .stick {
+.stick {
     width: 5px;
     height: 32px;
     background-color: white;
     margin: 0 auto;
-  }
+}
   
-  .lever-base {
+.lever-base {
     position: relative;
     width: 54px;
-  }
+}
   
-  .pivot {
+.pivot {
     width: 24px;
     height: 12px;
     border-radius: 50px 50px 0 0;
     background-color: #D0D2D3;
     margin: 0 auto;
-  }
+}
   
-  .base {
+.base {
     width: 54px;
     height: 3px;
     background-color: #B3B3B3;
-  }
+}

@@ -7,7 +7,7 @@ leverControl.addEventListener(
     gsap.fromTo(
       ".lever",
       { rotate: 30 },
-      { rotate: -80, duration: "1", repeat: 0, ease: "Sine.out" }
+      { rotate: -30, duration: "1", repeat: 0, ease: "Sine.out" }
     );
   },
   { once: true }
