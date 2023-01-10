@@ -1,6 +1,8 @@
-# Nail-Polish-Generator
+# Nail-Polish-Generator 💅
 
 ## Description
+
+When the pandemic happened a lot of people had to learn things that we usually payed others to do for us. One of those was doing our own nails. Now you would think shaping, cuticle care and filing would be the hardest part of nail care process but its actually the picking of the color that is the hardest.
 
 ## Table of Contents
 
@@ -16,7 +18,7 @@
 
 ---
 
-    As a user I to be able to generate different polish combinations whenever I pull the lever.
+As a user I to be able to generate different polish combinations whenever I pull the lever.
 
 ## Criteria
 
