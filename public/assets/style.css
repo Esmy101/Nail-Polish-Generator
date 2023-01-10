@@ -1,0 +1,54 @@
+
+
+
+/* Lever styles */
+.lever-control {
+    position: absolute;
+    width: 54px;
+    padding-top: 42px;
+    cursor: pointer;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .lever {
+    position: absolute;
+    width: 10px;
+    left: 22px;
+    top: 0;
+    transform: rotate(30deg);
+    transform-origin: 50% 100%;
+  }
+  
+  .knob {
+    background-color: black;
+    width: 10px;
+    height: 18px;
+  }
+  
+  .stick {
+    width: 5px;
+    height: 32px;
+    background-color: white;
+    margin: 0 auto;
+  }
+  
+  .lever-base {
+    position: relative;
+    width: 54px;
+  }
+  
+  .pivot {
+    width: 24px;
+    height: 12px;
+    border-radius: 50px 50px 0 0;
+    background-color: #D0D2D3;
+    margin: 0 auto;
+  }
+  
+  .base {
+    width: 54px;
+    height: 3px;
+    background-color: #B3B3B3;
+  }
