@@ -1,3 +1,20 @@
+:root {
+
+    --light: #f2e9e4;
+    --dark: #22223b;
+    --independence: #4A4E69;
+    --dray: #9A8C98;
+    --pink: #C9ADA7;
+}
+body{
+    background-color: var(--light);
+}
+header{
+    color: var(--dark);
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
 
 
 
