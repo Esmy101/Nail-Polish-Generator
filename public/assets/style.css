@@ -6,19 +6,17 @@
     --dray: #9A8C98;
     --pink: #C9ADA7;
 }
-body{
+*{
     background-color: var(--light);
 }
-header{
+.title{
+    
     color: var(--dark);
     font-size: xx-large;
     font-weight: bold;
     text-align: center;
 }
-
-
-
-
+/*Boxes*/
 
 
 /* Lever styles */
