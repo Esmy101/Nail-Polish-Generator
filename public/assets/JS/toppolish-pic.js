@@ -1,8 +1,8 @@
-import FlackieHolo from "../pictures/topperpolishpics/Flackie Holo.jpg";
-import LinearHolo from "../pictures/topperpolishpics/Linear Holo.jpg";
-import ScatteredHolo from "../pictures/topperpolishpics/ Scattered Holo.jpg";
+let FlackieHolo = "../pictures/topperpolishpics/Flackie Holo.jpg";
+let LinearHolo = "../pictures/topperpolishpics/Linear Holo.jpg";
+let ScatteredHolo = "../pictures/topperpolishpics/Scattered Holo.jpg";
 
-export const TopPolish = [
+const TopPolish = [
   {
     image: FlackieHolo,
   },
@@ -13,3 +13,6 @@ export const TopPolish = [
     image: ScatteredHolo,
   },
 ];
+
+// will return one top polish randomly from the array
+const randomElement = TopPolish[Math.floor(Math.random() * TopPolish.length)];

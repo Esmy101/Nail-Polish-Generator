@@ -1,7 +1,7 @@
-import Black from "../pictures/nailpolishpics/One-Coat Black.jpg";
-import RoyalBlue from "../pictures/nailpolishpics/Royal_Tea Blue.jpg";
+let Black = "./assets/pictures/nailpolishpics/One-Coat Black.jpg";
+let RoyalBlue = "./assets/pictures/nailpolishpics/Royal_Tea Blue.jpg";
 
-export const NailPolish = [
+const NailPolish = [
   {
     image: Black,
   },
@@ -9,3 +9,6 @@ export const NailPolish = [
     image: RoyalBlue,
   },
 ];
+
+// will return one nail polish randomly from the array
+const randomElement = NailPolish[Math.floor(Math.random() * NailPolish.length)];
