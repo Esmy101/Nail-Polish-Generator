@@ -20,3 +20,10 @@ leverControl.addEventListener("click", () => {
 });
 
 //Generate random nail polish combo
+let Top = ".top";
+let Polish = ".polish";
+
+onclick;
+polish.NailPolish;
+
+//No duplicated toppers

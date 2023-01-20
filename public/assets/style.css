@@ -18,9 +18,11 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-/*Nail Toppers*/
-#optional_box{
-    opacity: 0.5;
+/*Polish position*/
+.row {
+    padding-top: 42px;
+    text-align: center; 
+    padding-bottom: 52px;
 }
 /* Lever styles */
 .lever-control {
