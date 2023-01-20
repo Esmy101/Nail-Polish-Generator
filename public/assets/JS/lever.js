@@ -18,3 +18,5 @@ leverControl.addEventListener("click", () => {
 
   setTimeout(reset, 1000);
 });
+
+//Generate random nail polish combo
