@@ -6,7 +6,7 @@ When the pandemic happened a lot of people had to learn things that we usually p
 
 ## Table of Contents
 
-- [User-Story](#user-story)
+- [User Story](#user-story)
 
 - [Criteria](#criteria)
 

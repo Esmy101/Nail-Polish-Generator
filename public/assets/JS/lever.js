@@ -2,7 +2,9 @@
 let leverControl = document.getElementById("leverControl");
 let Polish = $(".polish");
 let Top = $(".topper");
-var x = $("#myCheck");
+let Top2 = $(".topper2");
+var Checkbox = $("#myCheck");
+var Checkbox2 = $("#myCheck2");
 function reset() {
   gsap.fromTo(
     ".lever",
@@ -21,19 +23,30 @@ leverControl.addEventListener("click", () => {
   let polish = generateRandomPolish().name;
 
   let topper = generateRandomTopper().name;
+  let topper2 = generateRandomTopper().name;
 
-  displayCombo(polish, topper);
+  while (topper == topper2) {
+    topper2 = generateRandomTopper().name;
+  }
+
+  displayCombo(polish, topper, topper2);
 
   setTimeout(reset, 1000);
 });
 
 //Generate random nail polish combo
-function displayCombo(polish, topper) {
+function displayCombo(polish, topper, topper2) {
   $(Polish).text(polish);
 
-  if ($(x).is(":checked")) {
+  if ($(Checkbox).is(":checked")) {
     $(Top).text(topper);
   } else {
     $(Top).text("");
+  }
+
+  if ($(Checkbox2).is(":checked")) {
+    $(Top2).text(topper2);
+  } else {
+    $(Top2).text("");
   }
 }
