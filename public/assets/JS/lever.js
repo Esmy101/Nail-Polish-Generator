@@ -2,7 +2,7 @@
 let leverControl = document.getElementById("leverControl");
 let Polish = $(".polish");
 let Top = $(".topper");
-
+var x = $("#myCheck");
 function reset() {
   gsap.fromTo(
     ".lever",
@@ -30,5 +30,10 @@ leverControl.addEventListener("click", () => {
 //Generate random nail polish combo
 function displayCombo(polish, topper) {
   $(Polish).text(polish);
-  $(Top).text(topper);
+
+  if ($(x).is(":checked")) {
+    $(Top).text(topper);
+  } else {
+    $(Top).text("");
+  }
 }
