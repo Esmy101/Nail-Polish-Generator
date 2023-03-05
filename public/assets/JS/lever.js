@@ -19,6 +19,7 @@ leverControl.addEventListener("click", () => {
   );
 
   let polish = generateRandomPolish().name;
+
   let topper = generateRandomTopper().name;
 
   displayCombo(polish, topper);
@@ -27,10 +28,7 @@ leverControl.addEventListener("click", () => {
 });
 
 //Generate random nail polish combo
-//window.location.href = "index.html";
-
 function displayCombo(polish, topper) {
   $(Polish).text(polish);
   $(Top).text(topper);
 }
-//No duplicated toppers
