@@ -1,5 +1,7 @@
 //Lever Control
 let leverControl = document.getElementById("leverControl");
+let Polish = $(".polish");
+let Top = $(".topper");
 
 function reset() {
   gsap.fromTo(
@@ -16,14 +18,19 @@ leverControl.addEventListener("click", () => {
     { rotate: -30, duration: "1", repeat: 0, ease: "Sine.out" }
   );
 
+  let polish = generateRandomPolish().name;
+  let topper = generateRandomTopper().name;
+
+  displayCombo(polish, topper);
+
   setTimeout(reset, 1000);
 });
 
 //Generate random nail polish combo
-let Top = ".top";
-let Polish = ".polish";
+//window.location.href = "index.html";
 
-onclick;
-polish.NailPolish;
-
+function displayCombo(polish, topper) {
+  $(Polish).text(polish);
+  $(Top).text(topper);
+}
 //No duplicated toppers
