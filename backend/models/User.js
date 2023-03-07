@@ -1,6 +1,6 @@
 const { ObjectID } = require("bson");
 const { Schema, model } = require("mongoose");
-bcrypt = require(bcrypt)
+bcrypt = require("bcrypt")
 const SALT_WORK_FACTOR = 16;
 
 
@@ -21,10 +21,13 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    token:{
+        type: String,
     }
   });
 
-  UserSchema.pre(save, function(next) {
+  UserSchema.pre('save', function(next) {
     var user = this;
 
     // only hash the password if it has been modified (or is new)

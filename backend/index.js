@@ -1,5 +1,6 @@
 const express = require('express')
 require('dotenv').config()
+const bodyParser = require('body-parser')
 const routes = require("./routes");
 
 const db = require("./config/connection");
@@ -7,9 +8,14 @@ const db = require("./config/connection");
 const PORT = process.env.port || 3001;
 const app = express();
 
+app.use(bodyParser.json());
+app.use(express.urlencoded())
+
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
+
+app.use(routes)
 
 db.once("open", () => {
   app.listen(PORT, () => {
