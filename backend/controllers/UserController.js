@@ -1,13 +1,50 @@
 const {User} = require("../models")
+const { signToken } = require("../utils/auth");
+
+function removePassword(user){
+    return delete user.password
+}
 
 module.exports = {
     getUser(req, res){
         res.status(200).json("hello user")
     },
 
-    signup(req, res){
+    async signup(req, res){
         let data = req.body
         console.log(data)
-        res.status(200).json("placeholder login")
+        const user = await User.create(data);
+
+        if (!user) {
+            return res.status(400).json({message: "something went wrong"})
+        }
+
+
+
+        const token = signToken(user);
+        res.json({ token, user });
+
+    },
+
+    async login(req, res){
+        let data = req.body
+        console.log("searching for", data)
+        const user = await User.findOne({email : data.email})
+
+        if (!user){
+            return res.json({message: "No user"})
+        }
+
+        const correctPassword = await user.isCorrectPassword(data.password)
+
+        if (correctPassword && typeof correctPassword == "boolean"){
+            const token = signToken(user);
+
+            return res.status(200).json({ token, user });
+        }
+        else {
+            return res.json({message: "Login error"})
+        }
+
     },
 }

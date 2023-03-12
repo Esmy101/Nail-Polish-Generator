@@ -5,12 +5,6 @@ const SALT_WORK_FACTOR = 16;
 
 
 const UserSchema = new Schema({
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
     email: {
       type: String,
       required: true,
@@ -20,7 +14,8 @@ const UserSchema = new Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     },
     token:{
         type: String,
@@ -48,11 +43,8 @@ const UserSchema = new Schema({
     });
 });
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
+UserSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
 };
 
 const User = model("user", UserSchema);

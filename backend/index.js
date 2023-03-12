@@ -9,7 +9,7 @@ const PORT = process.env.port || 3001;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.urlencoded())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
   res.send('Hello World')
