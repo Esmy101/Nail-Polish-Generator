@@ -19,3 +19,5 @@ const PolishSchema = new Schema({
     }
 
 })
+
+module.exports = PolishSchema

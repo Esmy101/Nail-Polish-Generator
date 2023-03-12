@@ -19,11 +19,8 @@ module.exports = {
             return res.status(400).json({message: "something went wrong"})
         }
 
-
-
         const token = signToken(user);
         res.json({ token, user });
-
     },
 
     async login(req, res){

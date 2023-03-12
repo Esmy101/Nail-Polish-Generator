@@ -1,5 +1,7 @@
 const { ObjectID } = require("bson");
 const { Schema, model } = require("mongoose");
+const polishSchema = require("./Polish");
+
 bcrypt = require("bcrypt")
 const SALT_WORK_FACTOR = 16;
 
@@ -17,9 +19,8 @@ const UserSchema = new Schema({
         required: true,
         match: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     },
-    token:{
-        type: String,
-    }
+    savedPolishes: [polishSchema]
+
   });
 
   UserSchema.pre('save', function(next) {
@@ -46,6 +47,10 @@ const UserSchema = new Schema({
 UserSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
+
+UserSchema.virtual('polishCount').get(function () {
+    return this.savedPolishes.length;
+  });
 
 const User = model("user", UserSchema);
 module.exports = { User, UserSchema };
