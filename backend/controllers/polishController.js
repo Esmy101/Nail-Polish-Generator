@@ -5,8 +5,14 @@ const { authMiddleware } = require("../utils/auth");
 
 module.exports = {
     async getAllPolishes(req, res){
-        const user = await User.findOne({_id:  req.user._id});
-        res.json(user.savedPolishes)
+        try{
+            const user = await User.findOne({_id:  req.user._id});
+            res.json(user.savedPolishes)
+        }
+        catch(err){
+            console.log(err);
+            return res.status(400).json(err)
+        }
     },
     async findPolish({user, params}, res){
         try {
