@@ -1,10 +1,6 @@
 const {User} = require("../models")
 const { signToken } = require("../utils/auth");
 
-function removePassword(user){
-    return delete user.password
-}
-
 module.exports = {
     getUser(req, res){
         res.status(200).json("hello user")

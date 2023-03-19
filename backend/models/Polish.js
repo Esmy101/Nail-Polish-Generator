@@ -17,7 +17,17 @@ const PolishSchema = new Schema({
         required: true,
         trim: true,
     }
+});
 
+// keeps searchable strings to lower case to more easily do DB searches
+PolishSchema.pre('validate', function(next){
+    let polish = this
+    if (!polish.isModified('category') || !polish.isModified('type')) return next();
+
+    polish.category = this.category.toLowerCase();
+    polish.type = this.type.toLowerCase();
+
+    next()
 })
 
 module.exports = PolishSchema
