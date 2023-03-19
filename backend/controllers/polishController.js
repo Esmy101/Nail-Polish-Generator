@@ -61,10 +61,27 @@ module.exports = {
     async removePolish({ user, params }, res){
         try {
             const updatedUser = await User.findOneAndUpdate(
-                {_id: user._id},
-                {$pull: {savedPolishes: {_id: params.polishID}}},
+                { _id: user._id },
+                { $pull: {savedPolishes: {_id: params.polishID} }},
                 { new: true }
                 )
+            return res.json(updatedUser.savedPolishes)
+        }
+        catch (err){
+            console.log(err);
+            return res.status(400).json(err)
+        }
+    },
+    async modifyPolish({ user, params, body}, res){
+        try {
+            await User.findOneAndUpdate(
+                { _id: user._id, "savedPolishes._id": params.polishID },
+                { $set: {"savedPolishes.$": body}},
+                { runValidators: true }
+                )
+
+            let updatedUser = await User.findOne({ _id: user._id})
+
             return res.json(updatedUser.savedPolishes)
         }
         catch (err){

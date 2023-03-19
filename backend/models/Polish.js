@@ -27,8 +27,6 @@ PolishSchema.pre('validate', function(next){
     polish.category = this.category.toLowerCase();
     polish.type = this.type.toLowerCase();
 
-    console.log(polish)
-
     next()
 })
 
