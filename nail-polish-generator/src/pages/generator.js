@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { gsap } from "gsap";
 
 export default function Projects() {
+  function handleClick({ currentTarget }) {
+    gsap.fromTo(
+      currentTarget,
+      { rotate: 30 },
+      { rotate: -30, duration: "1", repeat: 0, ease: "Sine.out" }
+    );
+
+    setTimeout(() => {
+      gsap.fromTo(
+        currentTarget,
+        { rotate: -30 },
+        { rotate: 30, duration: "1", repeat: 0, ease: "Sine.out" }
+      );
+    }, 1000);
+  }
   return (
     <div>
       <div className="container-fluid">
@@ -21,9 +37,9 @@ export default function Projects() {
           <p className="topper2"></p>
         </div>
       </div>
-
+      /*lever */
       <div id="leverControl" className="lever-control">
-        <div className="lever">
+        <div className="lever" onClick={handleClick}>
           <div className="knob"></div>
           <div className="stick"></div>
         </div>
