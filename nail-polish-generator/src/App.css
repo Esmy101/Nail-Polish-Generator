@@ -1,0 +1,72 @@
+
+:root {
+
+  --light: #f2e9e4;
+  --dark: #22223b;
+  --independence: #4A4E69;
+  --dray: #9A8C98;
+  --pink: #C9ADA7;
+}
+*{
+  background-color: var(--light);
+}
+.title{
+  
+  color: var(--dark);
+  font-size: xx-large;
+  font-weight: 400;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+/*Polish position*/
+.row {
+  padding-top: 42px;
+  text-align: center; 
+  padding-bottom: 52px;
+}
+/* Lever styles */
+.lever-control {
+  position: absolute;
+  width: 54px;
+  padding-top: 42px;
+  cursor: pointer;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+} 
+.lever {
+  position: absolute;
+  width: 10px;
+  left: 22px;
+  top: 0;
+  transform: rotate(30deg);
+  transform-origin: 50% 100%;
+} 
+.knob {
+  background-color: black;
+  width: 10px;
+  height: 18px;
+}
+.stick {
+  width: 5px;
+  height: 32px;
+  background-color: var(--pink);
+  margin: 0 auto;
+}
+.lever-base {
+  position: relative;
+  width: 54px;
+}  
+.pivot {
+  width: 24px;
+  height: 12px;
+  border-radius: 50px 50px 0 0;
+  background-color: var(--independence);
+  margin: 0 auto;
+} 
+.base {
+  width: 54px;
+  height: 3px;
+  background-color: var(--dray);
+}
