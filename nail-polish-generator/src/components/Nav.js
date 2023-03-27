@@ -25,12 +25,6 @@ export default function Nav(props) {
         >
           <a className="nav">My Polish</a>
         </div>
-        <div
-          style={linkStyle}
-          onClick={() => props.navigate(props.pages.portfolio)}
-        >
-          <a className="nav">Filter</a>
-        </div>
       </section>
     </nav>
   );

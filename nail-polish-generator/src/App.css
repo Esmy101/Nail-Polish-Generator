@@ -70,3 +70,13 @@
   height: 3px;
   background-color: var(--dray);
 }
+/*signin.js*/
+#login{
+  background-color: var(--dray);
+}
+#login:hover {
+  background-color: var(--independence);
+}
+#register{
+  color: var(--dray);
+}

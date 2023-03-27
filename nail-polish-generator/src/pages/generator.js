@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 
-export default function Projects() {
+export default function Random() {
   function handleClick({ currentTarget }) {
     gsap.fromTo(
       currentTarget,
@@ -37,7 +37,7 @@ export default function Projects() {
           <p className="topper2"></p>
         </div>
       </div>
-      /*lever */
+
       <div id="leverControl" className="lever-control">
         <div className="lever" onClick={handleClick}>
           <div className="knob"></div>

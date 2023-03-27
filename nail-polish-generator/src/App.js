@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DefaultLayout from "./components/templates/DefaultLayout";
 import Generator from "./pages/generator";
 import Nav from "./components/Nav";
+import Signin from "./pages/signin";
 import "./App.css";
 
-const Pages = {
-  home: <Generator />,
-};
-
-function App() {
-  const [currentPage, setCurrentPage] = useState(Pages.home);
+export default function App() {
   return (
-    <>
-      <header className="react-app">
-        <Nav pages={Pages} navigate={setCurrentPage} />
-        <Header />
-      </header>
-      {currentPage}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          <Route path="/" element={<Signin />} />
+          <Route path="/generator" element={<Generator />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
