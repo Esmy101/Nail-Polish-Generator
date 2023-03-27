@@ -16,7 +16,7 @@
   font-size: xx-large;
   font-weight: 400;
   text-align: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family:'Rubik Bubbles', cursive;
 }
 
 /*Polish position*/
@@ -79,4 +79,8 @@
 }
 #register{
   color: var(--dray);
+}
+#into{
+  font-family: 'Fuzzy Bubbles', cursive;
+  
 }

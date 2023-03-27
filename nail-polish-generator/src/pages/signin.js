@@ -8,23 +8,23 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 import "../App.css";
+import mainLogo from "../image/LogoMakr-25HUah.png";
 
 export default function Signin() {
   return (
-    <MDBContainer fluid>
+    <MDBContainer fluid id="into">
       <MDBRow>
         <MDBCol sm="6">
+          <div className="fw-normal mb-3 ps-0 pb-2">
+            <img src={mainLogo} />
+          </div>
+
           <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
             <h3
               className="fw-normal mb-3 ps-5 pb-3"
               style={{ letterSpacing: "1px" }}
             >
-              Log in{" "}
-              <MDBIcon
-                fas
-                icon="paintbrush fa-1.5x me-1.5"
-                style={{ color: "#9A8C98" }}
-              />
+              Log in
             </h3>
 
             <MDBInput
